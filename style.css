@@ -1,0 +1,18 @@
+ytd-app[ytp-theater-mode] {
+    --ytd-masthead-height: 0!important;
+    
+    ytd-masthead { display: none }
+    ytd-live-chat-frame { top: 0!important }
+    ytd-live-chat-frame[theater-watch-while][rounded-container] { border-radius: 0!important }
+    ytd-watch-flexy[full-bleed-player][theater] #full-bleed-container.ytd-watch-flexy {
+        --ytd-watch-flexy-width-ratio: 1;
+        --ytd-watch-flexy-height-ratio: 1;
+        max-height: 100vh!important;
+        height: 100vh!important;
+
+        video {
+            height: 100vh;
+            width: 100vw;
+        }
+    }
+}
