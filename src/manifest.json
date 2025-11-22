@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "version": "__VERSION__",
+  "name": "YouTube Theatre Mode",
+  "short_name": "YT Theatre Mode",
+  "description": "A more immersive theatre mode for YouTube.",
+  "homepage_url": "https://github.com/adeithe/youtube-theatre-mode",
+  "developer": {
+    "name": "Adeithe",
+    "url": "https://github.com/adeithe"
+  },
+  "icons": {
+    "16": "images/16.png",
+    "32": "images/32.png",
+    "48": "images/48.png",
+    "64": "images/64.png",
+    "128": "images/128.png"
+  },
+  "__firefox__browser_specific_settings": {
+    "__firefox__gecko": {
+      "id": "{6e2a1110-475c-49c6-9515-5c07b2b614a2}",
+      "strict_min_version": "109.0",
+      "data_collection_permissions": {
+        "required": ["none"],
+        "optional": []
+      }
+    }
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["style.css", "index.js"],
+      "matches": ["*://*.youtube.com/*"]
+    }
+  ]
+}
